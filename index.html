@@ -264,6 +264,9 @@
   </style>
 </head>
 <body>
+
+  <audio id="bgMusic" src="song.mp3" loop></audio>
+  
   <div id="page1" class="page">
     <div class="page-content">
       <div class="decoration decoration-top-left">❤</div>
@@ -323,34 +326,36 @@
       <div class="decoration decoration-bottom-right">❤</div>
       <img src="pict.jpg" alt="Girlfriend's Photo" class="girlfriend-photo">
       <div class="message-text">
-        <p>Happy birthday, sweetiee. i hope today feels extra warm and gentle for you. You’ve grown so beautifully, and honestly, watching you become who you are now is crazy special to me. I’m so grateful i get to be part of your life and celebrate another year with you. 
-          I wish this new year brings you softer days, clearer skies, and everything you’ve been quietly hoping for. I hope life treats you kindly, your plans unfold smoothly, and you get moments that make your heart feel full. You deserve good things showing up for you without stress, without pressure, like just naturally finding their way to you.
-          And i need you to know this.. i’m so proud of you. Like, genuinely. Proud of how far you’ve come, proud of how you keep choosing yourself, proud of how strong yet gentle you are. You do so much, even when you don’t talk about it. You’re amazing, baby. Happy birthday. I’m always, always rooting for you.</p>
-⠀⠀      </div>
+        <p>Happy birthday, sayangku. 
+          Senin, 6 April 2026.. matahari terbit lebih lembut seakan mengetahui dunia sedang merayakan seseorang yang sangat istimewa. Today's not just your birthday, it's a reminder of how lucky the world is to have someone as beautiful as you in it, dan aku? Aku orang paling beruntung detik ini bisa mengatakan pada dunia, kamu milikku. Happy birthday kakak sayang, I hope wherever you walk, good things find their way to your feet, may this year bring you peace in your soul dan semua cinta yang layak kamu dapatkan, termasuk cintaku. Thank you for being you, seseorang yang aku cintai kepribadian dan ketulusannya, yang aku kagumi. Thank you for staying. 
+          Thank you for letting me love you, dari pertama kali mata dan pikiranku dialihkan buat tertuju sama kamu sampai detik ini dan aku harap nanti, selamanya. Ulang tahun pertama dan seterusnya bareng aku ya? I hope us forevermore being together like this, we keep our each other promises. Aku sayang kamu, I love you the most baobei.</p>
+        </div>
       <div class="hearts" id="hearts5"></div>
     </div>
   </div>
 
   <script>
-    // Function to show a specific page and hide others
     function showPage(pageId) {
       // Hide all pages
       document.querySelectorAll('.page').forEach(page => {
         page.style.display = 'none';
       });
-      
-      // Show the selected page with a fade-in effect
+    
       const selectedPage = document.getElementById(pageId);
       selectedPage.style.display = 'flex';
       selectedPage.style.opacity = '0';
-      
+    
       setTimeout(() => {
         selectedPage.style.transition = 'opacity 0.5s ease';
         selectedPage.style.opacity = '1';
       }, 100);
-      
-      // Create floating hearts for the current page
+    
       createHearts(pageId);
+    
+      if (pageId === 'page2') {
+        const music = document.getElementById('bgMusic');
+        music.play();
+      }
     }
 
     // Function to create floating hearts
